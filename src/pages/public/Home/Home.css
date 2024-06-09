@@ -1,0 +1,262 @@
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Rubik:ital,wght@1,700&display=swap');
+
+
+
+body {
+    font-family: Arial, sans-serif;
+
+}
+
+/*cabeçario*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #010101;
+}
+
+.logo img {
+    max-height: 20px;
+}
+
+.nav-link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #010101;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #FFFFFF;
+}
+
+/*main*/
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: #010101;
+    padding: 50px;
+    font-family: 'Open Sans', Arial, sans-serif;
+
+}
+
+aside {
+    flex: 1;
+    padding: 20px;
+}
+
+aside h2 {
+    font-family: Rubik, bold 700 italic;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 45px;
+    margin-bottom: 2px;
+    color: #19cbf3;
+}
+
+aside h3 {
+    font-family: Rubik, bold 700 italic;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    font-size: 45px;
+    margin-bottom: 2px;
+    color: #000000;
+}
+
+
+
+
+aside p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Open Sans', Arial, sans-serif;
+    /* Fonte para textos pequenos */
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+article {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* corpo */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/*  benefícios */
+.benefits-section {
+    background-color: #7fdbff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.benefits-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #010101;
+}
+
+.benefits-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.benefit {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.benefit img {
+    max-width: 60px;
+    margin-bottom: 15px;
+}
+
+.benefit h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.benefit p {
+    font-size: 1rem;
+}
+
+/* botões de chamada para ação */
+.cta-buttons {
+    margin-top: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 10px;
+    background-color: #010101;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #7fdbff;
+    color: #010101;
+}
+
+/* responsividade */
+@media screen and (max-width: 768px) {
+    .benefit {
+        margin: 10px;
+    }
+}
+
+
+
+
+
+
+.footer {
+    background-color: #010101;
+    color: #FFFFFF;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-height: 180px;
+    margin-bottom: 20px;
+
+
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-social {
+    font-size: 24px;
+}
+
+.footer-social a {
+    color: #FFFFFF;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #7fdbff;
+}

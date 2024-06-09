@@ -1,0 +1,88 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "João Silva",
+      "birthdate": "1990-01-01",
+      "gender": "masculino",
+      "email": "joaosilva@example.com",
+      "senha": "senhaSegura123",
+      "role": "Client",
+      "objectives": "Melhorar condição física",
+      "observations": "Preferência por atividades ao ar livre",
+      "injuries": "Nenhuma",
+      "diabetes_indicator": false,
+      "smoking_indicator": false,
+      "joint_problem_indicator": false,
+      "loss_of_consciousness_indicator": false,
+      "chest_pain_indicator": false,
+      "professionalId": 1
+    },
+    {
+      "id": 2,
+      "name": "Maria Oliveira",
+      "birthdate": "1985-02-15",
+      "gender": "feminino",
+      "email": "mariaoliveira@example.com",
+      "senha": "senhaSegura456",
+      "role": "Client",
+      "objectives": "Aumentar resistência",
+      "observations": "Prefere exercícios indoor",
+      "injuries": "Lesão no joelho",
+      "diabetes_indicator": false,
+      "smoking_indicator": false,
+      "joint_problem_indicator": true,
+      "loss_of_consciousness_indicator": false,
+      "chest_pain_indicator": false,
+      "professionalId": 2
+    }
+  ],
+  "professionals": [
+    {
+      "id": 1,
+      "name": "Dr. Carlos Pereira",
+      "email": "drcarlos@example.com",
+      "specialty": "Cardiologia"
+    },
+    {
+      "id": 2,
+      "name": "Dra. Ana Costa",
+      "email": "draana@example.com",
+      "specialty": "Endocrinologia"
+    }
+  ],
+  "exerciseSheets": [
+    {
+      "id": 1,
+      "patientId": 1,
+      "objective": "Perder peso",
+      "creationDate": "2022-01-01"
+    },
+    {
+      "id": 2,
+      "patientId": 2,
+      "objective": "Aumentar resistência",
+      "creationDate": "2022-02-15"
+    }
+  ],
+  "measureSheets": [
+    {
+      "id": 1,
+      "patientId": 1,
+      "date": "2022-01-01"
+    },
+    {
+      "id": 2,
+      "patientId": 2,
+      "date": "2022-02-15"
+    }
+  ],
+  "requests": [
+    {
+      "id": 3,
+      "patientId": 2,
+      "patientName": "Maria Oliveira",
+      "condition": "Solicitação de Adição de Paciente"
+    }
+  ]
+}
