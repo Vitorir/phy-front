@@ -30,7 +30,7 @@ const NavBar = () => {
           <Box mr={8}>
             {currentUser ? (
               <>
-                <Link to="/chat">
+                <Link to="/chats">
                   <Button
                     variant="ghost"
                     colorScheme="teal"

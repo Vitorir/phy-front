@@ -1,9 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { Home } from '../src/pages/public/Home/Index'
-
-
-import { isAuthenticated } from "./services/auth";
+import { Home } from '../src/pages/public/Home/Index';
 import { Login } from './pages/public/Login/Login';
 import { SignUp } from './pages/public/SignUp/SignUp';
 import { Profile } from './pages/public/Profile/Profile';
@@ -14,29 +11,38 @@ import SearchPage from './pages/private/SeachPage/SearchPage';
 import ProfilePage from './pages/private/Profile/Profile';
 import MeasureSheet from './pages/private/MeasureSheet/MeasureSheet';
 import ExerciseSheet from './pages/private/ExerciseSheet/ExerciseSheet';
+import PrivateRoute from './services/PrivateRoute';
 
-const PrivateRoute = ({ children }) => {
-  return isAuthenticated() ? children : <Navigate to="/" />;
-};
+// // Função para verificar se o usuário está autenticado
+// const isAuthenticated = () => {
+//   // Verificar se há um token de autenticação no localStorage
+//   const token = localStorage.getItem('token');
+//   // Retornar true se o token estiver presente e válido
+//   return token ? true : false;
+// };
+
+
+// // Componente para rota privada
+// const PrivateRoute = ({ element }) => {
+//   return isAuthenticated() ? element : <Navigate to="/log-in" />;
+// };
 
 const AppRoutes = () => (
   <BrowserRouter>
-  <NavBar></NavBar>
+    <NavBar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/log-in" element={<Login />} />
       <Route path="/sign-up" element={<SignUp />} />
+      {/* Rotas públicas */}
       <Route path="/profile" element={<Profile />} />
-      <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/search" element={<SearchPage />} />
-      <Route path="/profile/:id" element={<ProfilePage />} />
-      <Route path="/measuresheet/" element={<MeasureSheet />} />
-      <Route path="/exercisesheet/" element={<ExerciseSheet />} />
-      <Route path="/app" element={
-        <PrivateRoute>
-          <Dashboard />
-        </PrivateRoute>
-      } />
+      {/* Rotas protegidas */}
+      <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
+      <Route path="/profile/:id" element={<PrivateRoute element={<ProfilePage />} />} />
+      <Route path="/measuresheet/" element={<PrivateRoute element={<MeasureSheet />} />} />
+      <Route path="/exercisesheet/" element={<PrivateRoute element={<ExerciseSheet />} />} />
+      {/* Rota de fallback */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>

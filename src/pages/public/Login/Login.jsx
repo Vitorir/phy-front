@@ -10,7 +10,6 @@ export const Login = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  // const { setCurrentUser } = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -19,30 +18,29 @@ export const Login = () => {
       setLoading(true);
 
       // Requisição para API
-      const response = await axios.post('http://localhost:3000/web/auth/signin', { email, password }, {
+      const response = await axios.post('http://localhost:3000/login', { email, password }, {
         headers: {
           'Content-Type': 'application/json',
         }
       });
       console.log(response);
 
-      const { access_token } = response.data;
+      const { token } = response.data;
 
-      // Verifique se 'access_token' está presente na resposta da API
-      console.log(access_token);
+      // Verifique se 'token' está presente na resposta da API
+      console.log(token);
 
       // Armazenar o token de acesso no localStorage
-      localStorage.setItem('token', access_token);
+      localStorage.setItem('token', token);
 
-      // Redirecionar para a página loged-in
-      navigate('/loged-in');
+      // Redirecionar para a página dashboard
+      navigate('/dashboard');
     } catch (error) {
       setError(`Erro ao fazer login! Erro: ${error.response ? error.response.data.message : error.message}`);
     } finally {
       setLoading(false);
     }
   }
-
 
   return (
     <Box
