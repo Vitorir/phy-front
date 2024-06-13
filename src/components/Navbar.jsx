@@ -23,14 +23,14 @@ const NavBar = () => {
         maxW="1200px"
         mx="auto"
       >
-        <Link to={currentUser ? "/loged-in" : "/"}>
+        <Link to={currentUser ? "/dashboard" : "/"}>
           <Image src={logo} alt="Logo" maxH="40px" />
         </Link>
         <Box display="flex" alignItems="center">
           <Box mr={8}>
             {currentUser ? (
               <>
-                <Link to="/chats">
+                <Link to="/chat">
                   <Button
                     variant="ghost"
                     colorScheme="teal"
@@ -49,7 +49,7 @@ const NavBar = () => {
                     size="sm"
                     mr={2}
                   >
-                    Search
+                    Buscar
                   </Button>
                 </Link>
                 <Link to="/measuresheet/">
@@ -60,7 +60,7 @@ const NavBar = () => {
                     size="sm"
                     mr={2}
                   >
-                    MeasureSheet
+                    Perimetria
                   </Button>
                 </Link>
                 <Link to="/exercisesheet/">
@@ -71,7 +71,7 @@ const NavBar = () => {
                     size="sm"
                     mr={2}
                   >
-                    ExerciseSheet
+                    Ficha de Treino
                   </Button>
                 </Link>
               </>
@@ -104,13 +104,15 @@ const NavBar = () => {
           </Box>
           <Box>
             {currentUser ? (
-              <Button
-                colorScheme="red"
-                size="sm"
-                onClick={() => setCurrentUser(false)}
-              >
-                Sair
-              </Button>
+              <Link to={'/'}>
+                <Button
+                  colorScheme="red"
+                  size="sm"
+                  onClick={() => setCurrentUser(false)}
+                >
+                  Sair
+                </Button>
+              </Link>
             ) : (
               <>
                 <Link to="/sign-up">

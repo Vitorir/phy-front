@@ -4,7 +4,6 @@ import { Home } from '../src/pages/public/Home/Index';
 import { Login } from './pages/public/Login/Login';
 import { SignUp } from './pages/public/SignUp/SignUp';
 import { Profile } from './pages/public/Profile/Profile';
-import { Dashboard } from './pages/private/Dashboard/Dashboard';
 import { NotFound } from './pages/public/NotFound/NotFound';
 import NavBar from './components/Navbar';
 import SearchPage from './pages/private/SeachPage/SearchPage';
@@ -12,6 +11,8 @@ import ProfilePage from './pages/private/Profile/Profile';
 import MeasureSheet from './pages/private/MeasureSheet/MeasureSheet';
 import ExerciseSheet from './pages/private/ExerciseSheet/ExerciseSheet';
 import PrivateRoute from './services/PrivateRoute';
+import Chat from './components/Chat/Chat';
+import Dashboard from './pages/private/Dashboard/Dashboard';
 
 // // Função para verificar se o usuário está autenticado
 // const isAuthenticated = () => {
@@ -42,6 +43,7 @@ const AppRoutes = () => (
       <Route path="/profile/:id" element={<PrivateRoute element={<ProfilePage />} />} />
       <Route path="/measuresheet/" element={<PrivateRoute element={<MeasureSheet />} />} />
       <Route path="/exercisesheet/" element={<PrivateRoute element={<ExerciseSheet />} />} />
+      <Route path="/chat/" element={<Chat />} />
       {/* Rota de fallback */}
       <Route path="*" element={<NotFound />} />
     </Routes>
